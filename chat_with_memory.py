@@ -1,13 +1,16 @@
+# CHAT WITH TEMPORARY RUNTIME MEMORY 
+
 import os
 from dotenv import load_dotenv
-from langchain.chat_models import init_chat_model
 from langchain_groq import ChatGroq
 from langchain_core.messages import HumanMessage,SystemMessage
 
 load_dotenv()
 
+# Model declaration
 MODEL  = "llama-3.1-8b-instant"
 
+messages=[]
 
 while True:
     prompt=input("You : ")
@@ -26,10 +29,10 @@ while True:
 
     response=llm.invoke(message)
 
+    messages.append({"role" : "user", "content" : prompt})
+    messages.append({"role" : "assistant", "content" : response.content})
+    
     print("Response : ",response.content)
     print("Meta Data : ",response.usage_metadata)
-    if prompt in ["Bye", "Nikal", "Milte Hai"]:
-        break
 
-    # print(llm)
-    #for Recive and Store in Responce From server Or Model
+    
