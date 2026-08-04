@@ -3,3 +3,4 @@ chatdb.db
 __pycache__/
 *.pyc
 .env
+__init__.py
