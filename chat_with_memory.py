@@ -14,10 +14,6 @@ messages=[]
 
 while True:
     prompt=input("You : ")
-    # print(prompt)
-    
-    # Method 1 :
-    # llm = init_chat_model(MODEL,model_provider="groq")
 
     # Method 2:
     llm=ChatGroq(model=MODEL)
