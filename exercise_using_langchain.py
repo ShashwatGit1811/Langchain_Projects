@@ -1,25 +1,15 @@
+# AI RESPONSES WITH STATIC LIST OF QUESTIONS 
+
 import os
 from dotenv import load_dotenv
-from langchain.chat_models import init_chat_model
 from langchain_groq import ChatGroq
 from langchain_core.messages import HumanMessage,SystemMessage
 
 load_dotenv()
 
+# model declaration
 MODEL  = "llama-3.1-8b-instant"
 
-
-# while True:
-# HumanMessage=input("You : ")
-# print(prompt)
-
-    # if HumanMessage in ["Bye", "Nikal", "Milte Hai"]:
-    #     break
-
-    #Method 1 :
-    # llm = init_chat_model(MODEL,model_provider="groq")
-
-    #Method 2:
 llm=ChatGroq(model=MODEL)
 
 questions=[
@@ -28,8 +18,6 @@ questions=[
         "What is MySql?"
     ]
 
-    # print(llm)
-    #for Recive and Store in Responce From server Or Model
 for q in questions:
         print("Questions : ",q)
         messages=[
