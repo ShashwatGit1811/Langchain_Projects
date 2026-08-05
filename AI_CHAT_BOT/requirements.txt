@@ -4,4 +4,3 @@ langchain-core
 langchain-groq
 fastapi
 python-dotenv
-sqlalchemy
